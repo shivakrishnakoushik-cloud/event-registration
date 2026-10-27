@@ -1,0 +1,48 @@
+
+<html>
+<head>
+    <title>Event Registration</title>
+</head>
+<body>
+    <h2>Event Registration Form</h2>
+
+    <form id="myForm">
+        Name:
+        <input type="text" id="name" required>
+        <br><br>
+
+        Email:
+        <input type="email" id="email" required>
+        <br><br>
+
+        Event:
+        <select id="event">
+            <option>Workshop</option>
+            <option>Seminar</option>
+            <option>Coding Competition</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("myForm").onsubmit = function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let event = document.getElementById("event").value;
+
+            alert("Registration Successful!");
+
+            document.getElementById("result").innerHTML =
+                "Welcome " + name +
+                "! Your email is " + email +
+                ". You registered for " + event + ".";
+        };
+    </script>
+</body>
+</html>
